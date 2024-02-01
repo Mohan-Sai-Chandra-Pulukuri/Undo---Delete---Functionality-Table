@@ -22,6 +22,12 @@ export default function App() {
       occupation: "teacher",
       age: 56,
     },
+    {
+      id: 5,
+      name: "mno",
+      occupation: "doctor",
+      age: 67,
+    },
   ]);
   const handleDelete = (row) => {
     stack.push(row);
