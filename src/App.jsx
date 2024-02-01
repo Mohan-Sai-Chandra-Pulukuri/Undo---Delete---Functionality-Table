@@ -1,5 +1,5 @@
 import "./styles.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const stack = [];
 export default function App() {
   const [arr, setArr] = useState([
@@ -27,12 +27,10 @@ export default function App() {
     stack.push(row);
     setArr(arr.filter((val) => val.id !== row.id));
     arr.sort((o1, o2) => o1.id - o2.id);
-    console.log(stack);
   };
   const handleUndo = () => {
-    console.log("Contains of Stack is ", JSON.stringify(stack));
     if (stack.length > 0) {
-      tmp = [...arr, stack.pop()];
+      let tmp = [...arr, stack.pop()];
       tmp.sort((o1, o2) => o1.id - o2.id);
       setArr(tmp);
     }
